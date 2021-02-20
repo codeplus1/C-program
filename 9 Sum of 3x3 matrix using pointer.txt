@@ -1,0 +1,19 @@
+using pointer find the sum of all the element opf a 3x3 matrix
+#include <stdio.h>
+
+int main() 
+{
+int matrix[3][3],i,j,sum;
+sum=0;
+printf("Enter all 9 element of 3*3 Matrix:\n");
+for(i=0;i<3;i++)
+{
+    for(j=0;j<3;j++)
+    {
+        scanf("%d",&matrix[i][j]);
+        sum=sum+matrix[i][j];
+    }
+}
+printf("\nSum of all element =%d",sum);
+return 0;
+}

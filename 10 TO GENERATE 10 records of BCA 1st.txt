@@ -1,0 +1,52 @@
+WAP TO GENERATE 10 records of BCA 1st semester Students and store then in stu.dat along with appropriate fields
+#include <stdio.h>
+#include<string.h>
+struct result
+{
+    char subject_code[10];
+    int marks;
+};
+struct student
+{
+    char roll_no[20];
+    char name[25];
+    struct result sem_1[5];
+};
+int main()
+{
+    int i;
+    FILE*stream;
+    struct student s;
+    strcpy(s.sem_1[0].subject_code,"HCAC-101");
+    strcpy(s.sem_1[1].subject_code,"HCAC-102");
+    strcpy(s.sem_1[2].subject_code,"HCAC-103");
+    strcpy(s.sem_1[3].subject_code,"HCAC-104");
+    strcpy(s.sem_1[4].subject_code,"HCAC-105");
+    stream = fopen("D:\\student","w");
+    if(stream==NULL)
+
+    {
+        for(i=1;i<=10;i++)
+        {
+            printf("\nEnter the students Roll number:");
+            fflush(stdin);
+            gets(s.roll_no);
+            printf("\nEnter the student name:");
+            fflush(stdin);
+            gets(s.name);
+            printf("\nEnter the mark obtained in HCAC-101:");
+            scanf("%d",&s.sem_1[0].marks);
+             printf("\nEnter the mark obtained in HCAC-102:");
+            scanf("%d",&s.sem_1[1].marks);
+             printf("\nEnter the mark obtained in HCAC-103:");
+            scanf("%d",&s.sem_1[2].marks);
+             printf("\nEnter the mark obtained in HCAC-104:");
+            scanf("%d",&s.sem_1[3].marks);
+             printf("\nEnter the mark obtained in HCAC-105:");
+            scanf("%d",&s.sem_1[4].marks);
+            fwrite(&s,sizeof(s),1,stream);
+        }
+        fclose(stream);
+    }
+    return 0;
+}

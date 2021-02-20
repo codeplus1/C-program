@@ -1,0 +1,23 @@
+Check each and every character in the string and display whether it is an alphabet,number or, special character
+#include <stdio.h>
+
+int main() 
+{
+char ch;
+printf("enter any character:");
+scanf("%c",&ch);
+/*chech alphabet*/
+if ((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+{
+    printf("'%c'is an Alphabet",ch);
+}
+else if(ch>='0'&&ch<='9')
+{
+    printf("'%c' is a Digit",ch);
+}
+else
+{
+    printf("'%c is a Special character",ch);
+}
+return 0;
+}

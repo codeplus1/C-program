@@ -1,0 +1,12 @@
+Given number is digit or not.
+#include<stdio.h> 
+#include<ctype.h> 
+int main() 
+{ 
+char c=getchar(); 
+if(isdigit(c))//function isdigit() to check whether I/P is digit, returns 1 if true. 
+{ 
+printf("Digit\n"); 
+} 
+return 0; 
+} 
